@@ -1,4 +1,5 @@
 public abstract class Booking implements iBooking {
+    //decleration of attributes
     public int floor;
     public String roomNumber;
     public String moduleName;
@@ -6,6 +7,7 @@ public abstract class Booking implements iBooking {
     public String courseName;
     public double duration;
 
+    //setting constructors to the attributes
     public Booking(int floor, String roomNumber, String moduleName, String lecturerName, String courseName, double duration) {
         this.floor = floor;
         this.roomNumber = roomNumber;
@@ -14,7 +16,7 @@ public abstract class Booking implements iBooking {
         this.courseName = courseName;
         this.duration = duration;
     }
-
+    //here we only have getters because in the application we dont need to set anything
     public int getFloor() {
         return floor;
     }
@@ -39,6 +41,7 @@ public abstract class Booking implements iBooking {
         return roomNumber;
     }
 
+    //method used to display the report in a specfic format
     public String BookingReport() {
         return"\nROOM : " + roomNumber +
                 "\n FLOOR: " + floor +

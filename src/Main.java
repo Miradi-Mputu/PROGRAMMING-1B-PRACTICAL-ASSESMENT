@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        //declerations
         Scanner scanner = new Scanner(System.in);
         int choice;
         int floor = 0;
@@ -11,6 +12,7 @@ public class Main {
         String courseName="";
         double duration=0;
 
+        //making BookingDetails an object of the main class
 BookingDetails bookingDetails = new BookingDetails(floor, roomNumber, moduleName, lecturerName, courseName, duration);
 
         System.out.println("-------------------------------------");
@@ -27,6 +29,7 @@ BookingDetails bookingDetails = new BookingDetails(floor, roomNumber, moduleName
             System.out.println("(3) Exit Application");
             System.out.println("-------------------------------------");
             System.out.print("Enter your choice: ");
+
 
             //this body of code restricts user form inserting any other key but the restricted 1-3 options
             //if the user does insert an unrequested key the program will say that it is invalid which it is
