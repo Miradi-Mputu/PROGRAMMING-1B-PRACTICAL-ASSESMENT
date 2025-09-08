@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        //declerations
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        //making BookingDetails an object of the main class
+        BookingDetails bookingDetails = new BookingDetails();
+
+        System.out.println("-------------------------------------");
+        System.out.println("CLASSROOM BOOKING SYSTEM");
+        System.out.println("-------------------------------------");
+
+        //Here we made use of a while loop to display the options
+        // in the while loop I have inserted if statements that will execute certain bodies of code that are found within the super class
+        while (true) {
+            System.out.println("\n-------------------------------------");
+            System.out.println("Please select one of the following menu items:");
+            System.out.println("(1) Book a classroom");
+            System.out.println("(2) View all bookings");
+            System.out.println("(3) Exit Application");
+            System.out.println("-------------------------------------");
+            System.out.print("Enter your choice: ");
+
+
+            //this body of code restricts user form inserting any other key but the restricted 1-3 options
+            //if the user does insert an unrequested key the program will say that it is invalid which it is
+            if (scanner.hasNextInt()) {
+                choice = scanner.nextInt();
+                scanner.nextLine();
+            } else {
+                System.out.println("Invalid input. Please enter a number from the menu.");
+                scanner.nextLine();
+                continue;
+            }
+// if the user selects option 1 it will excute the bookClassroom method in the Classroom class and so therefor the other options as well
+            switch (choice){
+                case 1:
+                    bookingDetails.getBookingDetails();
+                    break;
+                case 2:
+                    bookingDetails.viewAllBookings();
+                    break;
+                case 3 :
+                    bookingDetails.exitApplication();
+                    return;
+                default:
+                    System.out.println("Invalid option. Please choose a number from 1 to 3.");
+            }
+
+        }
+
+    }
+}
